@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="engine"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\usr\;CMake Files\..\..\..\usr\lib64\;CMake Files\..\..\..\usr\lib64\cmake\;CMake Files\..\..\..\usr\lib64\cmake\glfw3\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/julian/engine"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/julian/engine"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/julian/engine"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="engine">
+				<Option output="/home/julian/engine/engine" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/julian/engine"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DGLFW_DLL"/>
+					<Add directory="/home/julian/Downloads/VulkanSDK/1.0.46.0/x86_64/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/6.3.0/../../../../include/c++/6.3.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/6.3.0/../../../../include/c++/6.3.0/x86_64-unknown-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/6.3.0/../../../../include/c++/6.3.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/6.3.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/6.3.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 engine"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="engine/fast">
+				<Option output="/home/julian/engine/engine" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/julian/engine"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DGLFW_DLL"/>
+					<Add directory="/home/julian/Downloads/VulkanSDK/1.0.46.0/x86_64/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/6.3.0/../../../../include/c++/6.3.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/6.3.0/../../../../include/c++/6.3.0/x86_64-unknown-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/6.3.0/../../../../include/c++/6.3.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/6.3.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/6.3.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 engine/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/julian/engine/Camera.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/Camera.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/Entity.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/Entity.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/Game.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/Game.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/Graphics.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/Graphics.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/Window.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/Window.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/World.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/World.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/main.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/../../../usr/lib64/cmake/glfw3/glfw3ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib64\cmake\glfw3\"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/../../../usr/lib64/cmake/glfw3/glfw3Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib64\cmake\glfw3\"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/../../../usr/lib64/cmake/glfw3/glfw3Targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib64\cmake\glfw3\"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/../../../usr/lib64/cmake/glfw3/glfw3Targets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\usr\lib64\cmake\glfw3\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
