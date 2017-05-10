@@ -10,78 +10,72 @@
 #include <stdexcept>
 #include <GLFW/glfw3.h>
 #include "Window.h"
+#include "PhysicalDevice.h"
+#include "LogicalDevice.h"
 
-class Graphics {
-public:
-    Graphics(Window& window);
-    ~Graphics();
+namespace Engine {
+    class Graphics {
+    public:
+        Graphics(Window &window);
 
-private:
-    VkInstance instance;
-    VkPhysicalDevice physicalDevice;
-    VkDevice logicalDevice;
-    VkApplicationInfo appInfo;
-    VkDebugReportCallbackEXT callback;
-    std::vector<const char *> requiredExtensions;
+        ~Graphics();
 
-    const std::vector<const char*> validationLayers = {
-        "VK_LAYER_LUNARG_standard_validation"
+        const VkInstance& getInstance() const;
+        const VkSurfaceKHR& getSurface() const;
+
+    private:
+        VkInstance instance;
+
+        VulkanSetup::PhysicalDevice physicalDevice = nullptr;
+        VulkanSetup::LogicalDevice logicalDevice = nullptr;
+        VulkanSetup::ApplicationInfo appInfo = VulkanSetup::ApplicationInfo();
+
+        VkDebugReportCallbackEXT callback;
+        std::vector<const char *> requiredExtensions;
+
+        static std::vector<const char *> getGlfwRequiredExtensions();
+
+        bool checkRequiredExtensions();
+
+        bool checkValidationLayers();
+
+        VkDebugReportCallbackCreateInfoEXT createCallbackCreationInfo();
+
+        VkResult createDebugCallback(VkInstance instance, const VkDebugReportCallbackCreateInfoEXT *pCreateInfo,
+                                     const VkAllocationCallbacks *pAllocator, VkDebugReportCallbackEXT *pCallback);
+
+        void destroyDebugCallback(VkInstance instance, VkDebugReportCallbackEXT callback,
+                                  const VkAllocationCallbacks *pAllocator);
+
+        VulkanSetup::PhysicalDevice pickPhysicalDevice();
+
+        std::vector<VulkanSetup::PhysicalDevice> getPhysicalDevices();
+
+        bool isSuitable(const VulkanSetup::PhysicalDevice &device);
+
+        int getGraphicsQueueIndex(const VulkanSetup::PhysicalDevice &device);
+
+        VkQueue createGraphicsQueue();
+
+        VkSurfaceKHR surface;
+
     };
 
-    static VkApplicationInfo createApplicationInfo();
-    VkInstanceCreateInfo createInstanceCreateInfo();
+    static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(
+            VkDebugReportFlagsEXT flags,
+            VkDebugReportObjectTypeEXT objType,
+            uint64_t obj,
+            size_t location,
+            int32_t code,
+            const char *layerPrefix,
+            const char *msg,
+            void *userData) {
 
-    static std::vector<const char *> getGlfwRequiredExtensions();
+        std::cerr << "validation layer: " << msg << std::endl;
 
-    bool checkRequiredExtensions();
-
-    bool checkValidationLayers();
-
-    VkDebugReportCallbackCreateInfoEXT createCallbackCreationInfo();
-
-    VkResult createDebugCallback(VkInstance instance, const VkDebugReportCallbackCreateInfoEXT* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkDebugReportCallbackEXT* pCallback);
-    void destroyDebugCallback(VkInstance instance, VkDebugReportCallbackEXT callback, const VkAllocationCallbacks* pAllocator);
-
-    VkPhysicalDevice pickPhysicalDevice();
-
-    std::vector<VkPhysicalDevice> getPhysicalDevices();
-
-    bool isSuitable(const VkPhysicalDevice& device);
-
-    int getGraphicsQueueIndex(const VkPhysicalDevice &device);
-
-    VkDevice createLogicalDevice();
-
-    float queuePriority = 1.0f;
-
-    VkDeviceQueueCreateInfo deviceQueueCreateInfo;
-    VkDeviceQueueCreateInfo createDeviceQueueCreateInfo();
-
-    VkPhysicalDeviceFeatures physicalDeviceFeatures;
-    VkPhysicalDeviceFeatures getPhysicalDeviceFeatures();
-
-    VkQueue graphicsQueue;
-    VkQueue createGraphicsQueue();
-
-    VkSurfaceKHR surface;
-
-};
-
-static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(
-        VkDebugReportFlagsEXT flags,
-        VkDebugReportObjectTypeEXT objType,
-        uint64_t obj,
-        size_t location,
-        int32_t code,
-        const char* layerPrefix,
-        const char* msg,
-        void* userData) {
-
-    std::cerr << "validation layer: " << msg << std::endl;
-
-    return VK_FALSE;
+        return VK_FALSE;
+    }
 }
-
 
 
 #endif //ENGINE_GRAPHICS_H

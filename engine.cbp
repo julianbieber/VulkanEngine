@@ -17,21 +17,21 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/home/julian/engine"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="rebuild_cache">
 				<Option working_dir="/home/julian/engine"/>
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/julian/engine"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 edit_cache"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/julian/engine/Makefile&quot;  VERBOSE=1 clean"/>
@@ -86,10 +86,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/julian/engine/ApplicationInfo.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/ApplicationInfo.h">
+			<Option target="engine"/>
+		</Unit>
 		<Unit filename="/home/julian/engine/Camera.cpp">
 			<Option target="engine"/>
 		</Unit>
 		<Unit filename="/home/julian/engine/Camera.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/DeviceQueueCreateInfo.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/DeviceQueueCreateInfo.h">
 			<Option target="engine"/>
 		</Unit>
 		<Unit filename="/home/julian/engine/Entity.cpp">
@@ -108,6 +120,30 @@
 			<Option target="engine"/>
 		</Unit>
 		<Unit filename="/home/julian/engine/Graphics.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/GraphicsQueue.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/GraphicsQueue.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/InstanceCreateInfo.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/InstanceCreateInfo.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/LogicalDevice.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/LogicalDevice.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/PhysicalDevice.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/julian/engine/PhysicalDevice.h">
 			<Option target="engine"/>
 		</Unit>
 		<Unit filename="/home/julian/engine/Window.cpp">

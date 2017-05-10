@@ -6,21 +6,25 @@
 #define ENGINE_WINDOW_H
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
+#include "Graphics.h"
 
-class Window {
-public:
-    Window(const int width, const int height); // set up glfw window
-    ~Window();
+namespace Engine {
+    class Window {
+    public:
+        Window(const int width, const int height); // set up glfw window
+        ~Window();
 
-    void createSurface(VkInstance& instance, VkSurfaceKHR& surface);
+        void createSurface(Graphics &graphics);
 
-    bool shouldClose();
-    void processWindowEvents();
-private:
-    int height;
-    int width;
-    GLFWwindow* glfwWindow;
-};
+        bool shouldClose();
 
+        void processWindowEvents();
+
+    private:
+        int height;
+        int width;
+        GLFWwindow *glfwWindow;
+    };
+}
 
 #endif //ENGINE_WINDOW_H
